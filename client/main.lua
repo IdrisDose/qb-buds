@@ -20,6 +20,18 @@ function DrawText3Ds(x, y, z, text)
 	ClearDrawOrigin()
 end
 
+Citizen.CreateThread(function()
+    BestBuds = AddBlipForCoord(377.39, -833.21, 29.29)
+    SetBlipSprite (BestBuds, 469)
+    SetBlipDisplay(BestBuds, 4)
+    SetBlipScale  (BestBuds, 0.7)
+    SetBlipAsShortRange(BestBuds, true)
+    SetBlipColour(BestBuds, 2)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentSubstringPlayerName("Best Buds")
+    EndTextCommandSetBlipName(BestBuds)
+end) 
+
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 	PlayerData = QBCore.Functions.GetPlayerData()
