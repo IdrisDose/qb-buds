@@ -1,13 +1,12 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'BLVCKLISTED'
+author 'BLVCKLISTED, Idris'
 description 'qb-buds for QBCore - A target-based shop system'
-version '2.2.0'
+version '2.4.0'
 
 shared_scripts {
     'config.lua',
-    --'@qb-core/import.lua'
 }
 
 client_scripts {

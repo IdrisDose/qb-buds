@@ -1,6 +1,0 @@
--- Add these to your qb-core/shared.lua
-
-["joint_ak47"] 					 = {["name"] = "joint_ak47", 			 	 	["label"] = "AK Strain Joint", 			["weight"] = 0, 		["type"] = "item", 		["image"] = "joint_ak47.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sidney would be very proud at you"},
-["joint_bph"] 					 = {["name"] = "joint_bph", 			  	  	["label"] = "Purple Haze Strain Joint", ["weight"] = 0, 		["type"] = "item", 		["image"] = "joint_bph.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sidney would be very proud at you"},
-["joint_ogk"] 					 = {["name"] = "joint_ogk", 			  	  	["label"] = "OGKush Strain Joint", 		["weight"] = 0, 		["type"] = "item", 		["image"] = "joint_ogk.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sidney would be very proud at you"},
-["joint_ww"] 					 = {["name"] = "joint_ww", 			  	  		["label"] = "White Widow Strain Joint", ["weight"] = 0, 		["type"] = "item", 		["image"] = "joint_ww.png", 				["unique"] = false, 	["useable"] = true, 	["shouldClose"] = true,    ["combinable"] = nil,   ["description"] = "Sidney would be very proud at you"},

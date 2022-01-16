@@ -1,4 +1,4 @@
-local QBCore = exports["qb-core"]:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 
 isLoggedIn = true
 PlayerJob = {}
@@ -69,7 +69,7 @@ end)
 RegisterNetEvent("qb-buds:ak47")
 AddEventHandler("qb-buds:ak47", function()
 	if onDuty then
-		QBCore.Functions.TriggerCallback('qb-buds:server:get:ingredientak47', function(HasItems)
+		QBCore.Functions.TriggerCallback('qb-buds:server:HasAK47Ing', function(HasItems)
 			if HasItems then
 				QBCore.Functions.Progressbar("pickup_sla", "Making AK 47 Strain Joint..", 4000, false, true, {
 					disableMovement = true,
@@ -81,10 +81,7 @@ AddEventHandler("qb-buds:ak47", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_ak47", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_ak47"], "add")
-					QBCore.Functions.Notify("You made a Joint", "success")
+					TriggerServerEvent('qb-buds:server:finishAK47')
 				end, function()
 					QBCore.Functions.Notify("Cancelled..", "error")
 				end)
@@ -100,7 +97,7 @@ end)
 RegisterNetEvent("qb-buds:bph")
 AddEventHandler("qb-buds:bph", function()
 	if onDuty then
-		QBCore.Functions.TriggerCallback('qb-buds:server:get:ingredientbph', function(HasItems)
+		QBCore.Functions.TriggerCallback('qb-buds:server:HasPHIng', function(HasItems)
 			if HasItems then
 				QBCore.Functions.Progressbar("pickup_sla", "Making Purple Haze Strain Joint..", 4000, false, true, {
 					disableMovement = true,
@@ -112,10 +109,7 @@ AddEventHandler("qb-buds:bph", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_purple-haze", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_bph"], "add")
-					QBCore.Functions.Notify("You made a Joint", "success")
+					TriggerServerEvent('qb-buds:server:finishPH')
 				end, function()
 					QBCore.Functions.Notify("Cancelled..", "error")
 				end)
@@ -131,7 +125,7 @@ end)
 RegisterNetEvent("qb-buds:ogk")
 AddEventHandler("qb-buds:ogk", function()
 	if onDuty then
-		QBCore.Functions.TriggerCallback('qb-buds:server:get:ingredientogk', function(HasItems)
+		QBCore.Functions.TriggerCallback('qb-buds:server:HasOGKIng', function(HasItems)
 			if HasItems then
 				QBCore.Functions.Progressbar("pickup_sla", "Making OG Kush Strain Joint..", 4000, false, true, {
 					disableMovement = true,
@@ -143,10 +137,7 @@ AddEventHandler("qb-buds:ogk", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_og-kush", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_ogk"], "add")
-					QBCore.Functions.Notify("You made a Joint", "success")
+					TriggerServerEvent('qb-buds:server:finishOGK')
 				end, function()
 					QBCore.Functions.Notify("Cancelled..", "error")
 				end)
@@ -162,7 +153,7 @@ end)
 RegisterNetEvent("qb-buds:ww")
 AddEventHandler("qb-buds:ww", function()
 	if onDuty then
-		QBCore.Functions.TriggerCallback('qb-buds:server:get:ingredientww', function(HasItems)
+		QBCore.Functions.TriggerCallback('qb-buds:server:HasWWIng', function(HasItems)
 			if HasItems then
 				QBCore.Functions.Progressbar("pickup_sla", "Making White Widow Strain Joint..", 4000, false, true, {
 					disableMovement = true,
@@ -174,10 +165,7 @@ AddEventHandler("qb-buds:ww", function()
 					anim = "givetake1_a",
 					flags = 8,
 				}, {}, {}, function() -- Done
-					TriggerServerEvent('QBCore:Server:RemoveItem', "weed_white-widow", 1)
-					TriggerServerEvent('QBCore:Server:RemoveItem', "rolling_paper", 1)
-					TriggerEvent("inventory:client:ItemBox", QBCore.Shared.Items["joint_ww"], "add")
-					QBCore.Functions.Notify("You made a Joint", "success")
+					TriggerServerEvent('qb-buds:server:finishWW')
 				end, function()
 					QBCore.Functions.Notify("Cancelled..", "error")
 				end)

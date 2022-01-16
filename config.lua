@@ -8,7 +8,7 @@ Config.GaragePedLocations = {
 
 Config.SQL = 'oxmysql' --- oxmysql or ghmattisql
 
-Config.DebugPolys = false
+Config.DebugPolys = true
 
 Config.Items = {
 label = "Shop",
