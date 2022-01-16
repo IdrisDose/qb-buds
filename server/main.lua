@@ -2,8 +2,7 @@ local QBCore = exports['qb-core']:GetSharedObject()
 
 -- Billing Information
 
-RegisterServerEvent("qb-buds:bill:player")
-AddEventHandler("qb-buds:bill:player", function(playerId, amount)
+RegisterServerEvent("qb-buds:bill:player", function(playerId, amount)
     local biller = QBCore.Functions.GetPlayer(source)
     local billed = QBCore.Functions.GetPlayer(tonumber(playerId))
     local amount = tonumber(amount)
@@ -11,21 +10,21 @@ AddEventHandler("qb-buds:bill:player", function(playerId, amount)
         if billed ~= nil then
             if biller.PlayerData.citizenid ~= billed.PlayerData.citizenid then
                 if amount and amount > 0 then
-                   if Config.SQL == 'oxmysql' then
-                    exports.oxmysql:insert('INSERT INTO phone_invoices (citizenid, amount, society, sender) VALUES (:citizenid, :amount, :society, :sender)', {
-                        ['citizenid'] = billed.PlayerData.citizenid,
-                        ['amount'] = amount,
-                        ['society'] = biller.PlayerData.job.name,
-                        ['sender'] = biller.PlayerData.charinfo.firstname
-                    })
+                    if Config.SQL == 'oxmysql' then
+                        exports.oxmysql:insert('INSERT INTO phone_invoices (citizenid, amount, society, sender) VALUES (:citizenid, :amount, :society, :sender)', {
+                            ['citizenid'] = billed.PlayerData.citizenid,
+                            ['amount'] = amount,
+                            ['society'] = biller.PlayerData.job.name,
+                            ['sender'] = biller.PlayerData.charinfo.firstname
+                        })
                     else
-                      exports.ghmattisql:execute('INSERT INTO phone_invoices (citizenid, amount, society, sender) VALUES (@citizenid, @amount, @society, @sender)', {
-                        ['@citizenid'] = billed.PlayerData.citizenid,
-                        ['@amount'] = amount,
-                        ['@society'] = biller.PlayerData.job.name,
-                        ['@sender'] = biller.PlayerData.charinfo.firstname
-                       })
-                   end
+                        exports.ghmattisql:execute('INSERT INTO phone_invoices (citizenid, amount, society, sender) VALUES (@citizenid, @amount, @society, @sender)', {
+                            ['@citizenid'] = billed.PlayerData.citizenid,
+                            ['@amount'] = amount,
+                            ['@society'] = biller.PlayerData.job.name,
+                            ['@sender'] = biller.PlayerData.charinfo.firstname
+                        })
+                    end
                     TriggerClientEvent('qb-phone:RefreshPhone', billed.PlayerData.source)
                     TriggerClientEvent('QBCore:Notify', source, 'Invoice Successfully Sent', 'success')
                     TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, 'New Invoice Received')
