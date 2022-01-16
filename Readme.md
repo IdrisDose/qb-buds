@@ -20,11 +20,11 @@ QBCore Framework - https://github.com/qbcore-framework/qb-core
 
 PolyZone - https://github.com/mkafrin/PolyZone
 
-berkie-target - https://github.com/BerkieBb/berkie-target (Only needed if not using draw text)
+berkie-target - https://github.com/BerkieBb/qb-target (Only needed if not using draw text)
 
-nh-context - ~~https://github.com/nerohiro/nh-context (owner removed script)~~ See folder [NH] for scripts
+nh-context - ~~https://github.com/qbcore-framework/qb-menu
 
-nh-keyboard - ~~https://github.com/nerohiro/nh-keyboard (owner removed script)~~ See folder [NH] for scripts
+nh-keyboard - ~~https://github.com/qbcore-framework/qb-input
 
 ## TODO
 
