@@ -29,8 +29,6 @@ qb-input - https://github.com/qbcore-framework/qb-input
 ## TODO
 
 - Add ped garage file back in
-- Fix Global PlayerData error in {qb-buds/client/main.lua:33}
-
 
 ## Add to shared/jobs.lua or shared.lua
 ```lua
