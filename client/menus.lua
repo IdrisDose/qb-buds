@@ -5,7 +5,7 @@ Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("budsDuty", vector3(375.65, -824.95, 29.3), 0.30, 1.2, {
 		name = "budsDuty",
 		heading = 177.88,
-		debugPoly = true,
+		debugPoly = Config.DebugPolys,
 		minZ=29.6,
 		maxZ=30.5,
 	}, {
@@ -22,7 +22,7 @@ Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("budstray1", vector3(377.26, -827.3, 29.3), 0.60, 0.70, {
 		name = "budstray1",
 		heading = 177.88,
-		debugPoly = true,
+		debugPoly = Config.DebugPolys,
 		minZ=29.3,
 		maxZ=29.8,
 	}, {
@@ -39,7 +39,7 @@ Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("budsRegister", vector3(380.2, -827.29, 29.3), 0.60, 0.70, {
 		name = "budsRegister",
 		heading = 177.88,
-		debugPoly = true,
+		debugPoly = Config.DebugPolys,
 		minZ=29.3,
 		maxZ=29.8,
 	}, {
@@ -58,7 +58,7 @@ Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("budsShop", vector3(373.61, -827.76, 29.3), 2.10, 0.85, {
 		name = "budsShop",
 		heading = 177.88,
-		debugPoly = true,
+		debugPoly = Config.DebugPolys,
 		minZ=28.3,
 		maxZ=29.8,
 	}, {
@@ -76,7 +76,7 @@ Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("budsStorage", vector3(376.88, -824.5, 28.3), 0.9, 0.75, {
 		name = "budsStorage",
 		heading = 177.88,
-		debugPoly = true,
+		debugPoly = Config.DebugPolys,
 		minZ=28.3,
 		maxZ=29.8,
 	}, {
@@ -94,7 +94,7 @@ Citizen.CreateThread(function()
 	exports['qb-target']:AddBoxZone("budsWeedCrafting", vector3(382.51, -817.44, 29.3), 1.25, 2.25, {
 		name = "budsWeedCrafting",
 		heading = 179.88,
-		debugPoly = true,
+		debugPoly = Config.DebugPolys,
 		minZ=28.3,
 		maxZ=29.5,
 	}, {
