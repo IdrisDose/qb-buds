@@ -29,11 +29,13 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
 	end
 end)
 
-RegisterNetEvent('QBCore:Client:SetDuty')
-AddEventHandler('QBCore:Client:SetDuty', function(duty)
-	if PlayerJob.name == 'bestbuds' then
-		onDuty = duty
-	end
+RegisterNetEvent('QBCore:Client:OnJobUpdate', function(JobInfo)
+    PlayerJob = JobInfo
+    onDuty = PlayerJob.onduty
+end)
+
+RegisterNetEvent('QBCore:Client:SetDuty', function(duty)
+    onDuty = duty
 end)
 
 RegisterNetEvent("qb-buds:DutyBuds")
