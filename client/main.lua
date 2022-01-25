@@ -162,8 +162,7 @@ AddEventHandler("qb-buds:ogk", function()
 	end
 end)
 
-RegisterNetEvent("qb-buds:ww")
-AddEventHandler("qb-buds:ww", function()
+RegisterNetEvent("qb-buds:ww", function()
 	if onDuty then
 		QBCore.Functions.TriggerCallback('qb-buds:server:HasWWIng', function(HasItems)
 			if HasItems then
@@ -188,4 +187,56 @@ AddEventHandler("qb-buds:ww", function()
 	else
 		QBCore.Functions.Notify("You must be Clocked into work", "error")
 	end
+end)
+
+RegisterNetEvent('qb-buds:client:ActualTrimming', function(data)
+	local theStrain = data.theStrain
+	local trimDist = vector3(380.45, -812.38, 29.3)
+	-- print(PlayerJob.name)
+	-- if PlayerJob.name == 'bestbuds' then
+		local ped = PlayerPedId()
+		local distance = #(GetEntityCoords(ped) - trimDist)
+		if distance < 5 then
+			QBCore.Functions.Progressbar("trimer_le_weed", "Trimming the weeds.", 4000, false, true, {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			}, {
+				animDict = "mp_common",
+				anim = "givetake1_a",
+				flags = 8,
+			}, {}, {}, function() -- Done
+				TriggerServerEvent('qb-buds:server:finishDrying', theStrain)
+			end, function()
+				QBCore.Functions.Notify("Cancelled..", "error")
+			end)
+		end
+	-- end
+end)
+
+RegisterNetEvent('qb-buds:client:ActualDrying', function(data)
+	local theStrain = data.theStrain
+	local trimDist = vector3(380.45, -812.38, 29.3)
+	-- print(PlayerJob.name)
+	-- if PlayerJob.name == 'bestbuds' then
+		local ped = PlayerPedId()
+		local distance = #(GetEntityCoords(ped) - trimDist)
+		if distance < 5 then
+			QBCore.Functions.Progressbar("dyer_le_weed", "Drying the weeds.", 4000, false, true, {
+				disableMovement = true,
+				disableCarMovement = true,
+				disableMouse = false,
+				disableCombat = true,
+			}, {
+				animDict = "anim@amb@business@weed@weed_inspecting_lo_med_hi@",
+				anim = "weed_crouch_checkingleaves_idle_01_inspector",
+				flags = 32,
+			}, {}, {}, function() -- Done
+				TriggerServerEvent('qb-buds:server:finishTrim', theStrain)
+			end, function()
+				QBCore.Functions.Notify("Cancelled..", "error")
+			end)
+		end
+	-- end
 end)
